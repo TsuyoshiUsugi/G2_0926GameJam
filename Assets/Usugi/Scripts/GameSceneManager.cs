@@ -59,8 +59,8 @@ public class GameSceneManager : MonoBehaviour
         ActiveCommand();
         _timeManager.enabled = true;
         _currentGameState.Value = GameState.Playing;
+        await UniTask.WaitUntil(() => _timeManager.TimersNumber <= 0);
         Debug.Log("End");
-        await WaitUntil(_timeManager.);
         _currentGameState.Value = GameState.End;
         EndSequence();
     }
