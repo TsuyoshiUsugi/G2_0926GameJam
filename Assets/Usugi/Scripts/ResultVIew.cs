@@ -46,6 +46,7 @@ public class ResultVIew : MonoBehaviour
     /// <returns></returns>
     public async UniTask ResultRunAsync()
     {
+        _canvas.SetActive(true);
         FieldInit();
         //各プレイヤーのドンブリの表示
         ShowFoodAsync(Player.Player1, _p1Createfoods).Forget();

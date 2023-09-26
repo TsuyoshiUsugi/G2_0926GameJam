@@ -12,7 +12,12 @@ public class GameSceneManager : MonoBehaviour
     /// <summary> 現在のステートを管理する </summary>
     [SerializeField] ReactiveProperty<GameState> _currentGameState = new (GameState.Prepare);
     [SerializeField] Text _startCountText;
-    [SerializeField] ResultVIew _resultVIew;
+    [SerializeField] ResultVIew _resultView;
+    [SerializeField] P1Command _p1Command;
+    [SerializeField] P2Command _p2Command;
+    [SerializeField] GameObject _p1CommandObj;
+    [SerializeField] GameObject _p2CommandObj;
+    TimeManager _timeManager;
 
     /// <summary> ステート一覧 </summary>
     public enum GameState
@@ -30,6 +35,12 @@ public class GameSceneManager : MonoBehaviour
 
     private void InitField()
     {
+        _timeManager = GetComponent<TimeManager>();
+        _timeManager.enabled = false;
+        _p1Command.enabled = false;
+        _p2Command.enabled = false;
+        _p1CommandObj.SetActive(false);
+        _p2CommandObj.SetActive(false);
         _startCountText.gameObject.SetActive(false);
     }
 
@@ -45,11 +56,21 @@ public class GameSceneManager : MonoBehaviour
         await StartCount();
         Debug.Log("Start");
         _currentGameState.Value = GameState.Start;
-        Debug.Log("Playing");
+        ActiveCommand();
+        _timeManager.enabled = true;
         _currentGameState.Value = GameState.Playing;
+        await UniTask.WaitUntil(() => _timeManager.TimersNumber <= 0);
         Debug.Log("End");
         _currentGameState.Value = GameState.End;
         EndSequence();
+    }
+
+    private void ActiveCommand()
+    {
+        _p1Command.enabled = true;
+        _p2Command.enabled = true;
+        _p1CommandObj.SetActive(true);
+        _p2CommandObj.SetActive(true);
     }
 
     /// <summary>
@@ -75,6 +96,6 @@ public class GameSceneManager : MonoBehaviour
     /// </summary>
     private void EndSequence()
     { 
-        _resultVIew.ResultRunAsync().Forget();
+        _resultView.ResultRunAsync().Forget();
     }
 }
