@@ -481,6 +481,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Winer: 3
+  _p1Score: {fileID: 0}
+  _p2Score: {fileID: 0}
 --- !u!222 &1864378233
 CanvasRenderer:
   m_ObjectHideFlags: 0
