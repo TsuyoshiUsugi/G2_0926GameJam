@@ -12,7 +12,7 @@ public class GameSceneManager : MonoBehaviour
     /// <summary> 現在のステートを管理する </summary>
     [SerializeField] ReactiveProperty<GameState> _currentGameState = new (GameState.Prepare);
     [SerializeField] Text _startCountText;
-    [SerializeField] ResultVIew _resultVIew;
+    [SerializeField] ResultVIew _resultView;
 
     /// <summary> ステート一覧 </summary>
     public enum GameState
@@ -75,6 +75,6 @@ public class GameSceneManager : MonoBehaviour
     /// </summary>
     private void EndSequence()
     { 
-        _resultVIew.ResultRunAsync().Forget();
+        _resultView.ResultRunAsync().Forget();
     }
 }
