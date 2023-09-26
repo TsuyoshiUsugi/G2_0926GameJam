@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Cysharp.Threading.Tasks;
 
@@ -10,14 +11,19 @@ using Cysharp.Threading.Tasks;
 /// </summary>
 public class ResultVIew : MonoBehaviour
 {
+    //各プレイヤーの食材リスト
     [SerializeField] List<GameObject> _p1Createfoods;   //ｐ１のできた食材リスト
     [SerializeField] List<GameObject> _p2Createfoods;   //ｐ２のできた食材リスト
-    [SerializeField] GameObject _p1UIOffset;    //ｐ１の配置するオフセット
+    //食材置くオフセット
+    [SerializeField] GameObject _p1UIOffset; 
     [SerializeField] GameObject _p2UIOffset;
     /// <summary> 食材の幅 </summary>
     [SerializeField] float _foodUIDiff = 1;
+    //各プレイヤーの結果を表示
     [SerializeField] Text _p1MessageText;
     [SerializeField] Text _p2MessageText;
+    //リスタートボタン
+    [SerializeField] Button _restartButton;
 
     private void Start()
     {
@@ -29,6 +35,8 @@ public class ResultVIew : MonoBehaviour
     {
         _p1MessageText.gameObject.SetActive(false);
         _p2MessageText.gameObject.SetActive(false);
+        _restartButton.onClick.AddListener(() => SceneManager.LoadScene(0));
+        _restartButton.gameObject.SetActive(false);
     }
 
     /// <summary>
@@ -42,7 +50,8 @@ public class ResultVIew : MonoBehaviour
         ShowFoodAsync(_p1UIOffset.transform.position, _p1Createfoods).Forget();
         await ShowFoodAsync(_p2UIOffset.transform.position, _p2Createfoods);
         await UniTask.Delay(System.TimeSpan.FromSeconds(1));
-        ShowResult().Forget();
+        await ShowResult();
+        _restartButton.gameObject.SetActive(true);
         //Debug.Log("Prepare");
         //_currentGameState.Value = GameState.Prepare;
         //await StartCount();
@@ -83,7 +92,6 @@ public class ResultVIew : MonoBehaviour
         {
             _p1MessageText.text = "Win";
             _p2MessageText.text = "Lose";
-
         }
     }
 }
