@@ -8,11 +8,15 @@ public class TimeManager : MonoBehaviour
     public static float CountDownTime;    // カウントダウンタイム
     public Text TextCountDown;              // 表示用テキストUI
     [SerializeField] float Timersnumber = 50;
+    public AudioClip sound;
+    AudioSource audioSource;
 
     // Use this for initialization
     void Start()
     {
         CountDownTime = Timersnumber;    // 対人戦用のタイマー
+        audioSource = GetComponent<AudioSource>();
+        InvokeRepeating("RepeatMsg",0f,1f);
     }
 
     // Update is called once per frame
@@ -29,6 +33,9 @@ public class TimeManager : MonoBehaviour
         {
             SceneManager.LoadScene("result", LoadSceneMode.Single);
         }
-
+    }
+    void RepeatMsg()
+    {
+        audioSource.PlayOneShot(sound);
     }
 }
