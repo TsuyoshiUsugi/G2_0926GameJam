@@ -17,6 +17,7 @@ public class GameSceneManager : MonoBehaviour
     [SerializeField] P2Command _p2Command;
     [SerializeField] GameObject _p1CommandObj;
     [SerializeField] GameObject _p2CommandObj;
+    TimeManager _timeManager;
 
     /// <summary> ステート一覧 </summary>
     public enum GameState
@@ -34,6 +35,8 @@ public class GameSceneManager : MonoBehaviour
 
     private void InitField()
     {
+        _timeManager = GetComponent<TimeManager>();
+        _timeManager.enabled = false;
         _p1Command.enabled = false;
         _p2Command.enabled = false;
         _p1CommandObj.SetActive(false);
@@ -54,9 +57,10 @@ public class GameSceneManager : MonoBehaviour
         Debug.Log("Start");
         _currentGameState.Value = GameState.Start;
         ActiveCommand();
-        Debug.Log("Playing");
+        _timeManager.enabled = true;
         _currentGameState.Value = GameState.Playing;
         Debug.Log("End");
+        await WaitUntil(_timeManager.);
         _currentGameState.Value = GameState.End;
         EndSequence();
     }
