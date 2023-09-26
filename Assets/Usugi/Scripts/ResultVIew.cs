@@ -29,7 +29,8 @@ public class ResultVIew : MonoBehaviour
     private async UniTask ResultRunAsync()
     {
         //各プレイヤーのドンブリの表示
-        ShowFoodAsync(_p1Createfoods).Forget();
+        ShowFoodAsync(_p1UIOffset.transform.position, _p1Createfoods).Forget();
+        ShowFoodAsync(_p2UIOffset.transform.position, _p2Createfoods).Forget();
         //Debug.Log("Prepare");
         //_currentGameState.Value = GameState.Prepare;
         //await StartCount();
@@ -42,14 +43,14 @@ public class ResultVIew : MonoBehaviour
         //EndSequence();
     }
 
-    private async UniTask ShowFoodAsync(List<GameObject> foods)
+    private async UniTask ShowFoodAsync(Vector3 offset, List<GameObject> foods)
     {
         Debug.Log("dada");
         for (int i = 0; i < foods.Count; i++)
         {
             await UniTask.Delay(System.TimeSpan.FromSeconds(1));
-            foods[i].transform.position = _p1UIOffset.transform.position + new Vector3(_foodUIDiff * i, 0f, 0f);
-            Debug.Log(foods[i].transform.position);
+            Instantiate(foods[i]);
+            foods[i].transform.position = offset + new Vector3(_foodUIDiff * i, 0f, 0f);
         }
     }
 }
