@@ -18,23 +18,10 @@ public class Cooking : MonoBehaviour
     [SerializeField, Header("できる予定のリスト")] List<Image> _cookkedList = new List<Image>();
 
 
-    GameObject _Object;
-    //シングルトンパターン（簡易型、呼び出される）
-    public static Cooking Instance;
+    [SerializeField] Bowl _bow;
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(this);
-        }
-    }
-    //シングルトン（ここまで）
-    // Start is called before the first frame update
+    GameObject _Object;
+    
     void Start()
     {
 
@@ -43,9 +30,7 @@ public class Cooking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Bowl();
-        Rice();
-        Guzai();
+        
     }
 
     public void Bowl()
@@ -55,15 +40,16 @@ public class Cooking : MonoBehaviour
 
     public void Rice()
     {
-       var obj = Instantiate(_rice);
+       var obj = Instantiate(_rice, _Object.transform);
         obj.transform.SetParent(_Object.transform);
     }
 
     public void Guzai()
     {
         int x = Random.Range(0, _guzaiList.Count);
-        var obj = Instantiate(_guzaiList[x]);
+        var obj = Instantiate(_guzaiList[x], _Object.transform);
         obj.transform.SetParent(_Object.transform);
         _cookingList.Add(_cookkedList[x]);
+        _Object.GetComponent<Bowl>().Move();
     }
 }
