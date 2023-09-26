@@ -13,6 +13,8 @@ public class P2Command : MonoBehaviour
     //[SerializeField] public GameObject _rice = default;
     //[SerializeField] public GameObject _ingredients = default;
     //ゲームオブジェクト用変数
+    [SerializeField] Cooking _cooking;
+
     [SerializeField] public int _p2Count;
     List<KeyCode> _p2CommandList = new();
     KeyCode[] _p2Command = new[] { KeyCode.I, KeyCode.J, KeyCode.K, KeyCode.L };
@@ -28,6 +30,18 @@ public class P2Command : MonoBehaviour
             Debug.Log(GetKey);
             if (GetKey.ToUpper() == _p2CommandList[0].ToString())
             {
+                if (_p2CommandList.Count == 3)
+                {
+                    _cooking.Bowl();
+                }
+                else if (_p2CommandList.Count == 2)
+                {
+                    _cooking.Rice();
+                }
+                else if (_p2CommandList.Count == 1)
+                {
+                    _cooking.Guzai();
+                }
                 _p2CommandList.RemoveAt(0);
                 IslastCommand();
             }
