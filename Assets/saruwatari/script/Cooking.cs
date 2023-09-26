@@ -17,7 +17,8 @@ public class Cooking : MonoBehaviour
     [SerializeField, Header("できたリスト")] public List<Image> _cookingList = new List<Image>();
     [SerializeField, Header("できる予定のリスト")] List<Image> _cookkedList = new List<Image>();
 
-
+    [SerializeField, Header("飛んでいく位置")]
+    Vector3 _vector;
     [SerializeField] Bowl _bow;
 
     GameObject _Object;
@@ -50,6 +51,6 @@ public class Cooking : MonoBehaviour
         var obj = Instantiate(_guzaiList[x], _Object.transform);
         obj.transform.SetParent(_Object.transform);
         _cookingList.Add(_cookkedList[x]);
-        _Object.GetComponent<Bowl>().Move();
+        _Object.GetComponent<Bowl>().Move(_vector);
     }
 }

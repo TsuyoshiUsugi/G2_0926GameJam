@@ -5,13 +5,10 @@ using DG.Tweening;
 
 public class Bowl : MonoBehaviour
 {
-
-
-    public int X;
     
-    public void Move()
+    public void Move(Vector3 pos)
     {
-        this.transform.DOMove(new Vector3(0f, X, 0f), 3f);
+        this.transform.DOMove(pos, 3f);
         Destroy(this.gameObject,3f);
     }
 }
