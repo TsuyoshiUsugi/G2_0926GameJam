@@ -39,7 +39,7 @@ public class SceneSwitch : MonoBehaviour
         IEnumerator ScSw()
         {
             yield return new WaitForSeconds(seconds);
-            SceneManager.LoadScene("hiroto");
+            SceneManager.LoadScene(1);
         }
 
         // ２つのボタンを押されてtureになったらシーンを切り替える
