@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/hiroto/Scenes/hiroto.unity
-    guid: 224c0c35433e5e64d8bcb634630c6af0
-  - enabled: 1
     path: Assets/Release/TitleScene.unity
     guid: 314ed7c13656d6047b10acbf6b828235
+  - enabled: 1
+    path: Assets/Release/GameScene.unity
+    guid: a979a175f54eb4e4c9d20e0256c07639
   m_configObjects: {}
