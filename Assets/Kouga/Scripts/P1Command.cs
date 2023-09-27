@@ -68,20 +68,20 @@ public class P1Command : MonoBehaviour
         if (_p1CommandList.Count <= 0)
         {
             _p1Count += 1;
-            if (timeManager._timersnumber > _endTimer)
-            {
-                _p1Score.text = $"Å~{_p1Count:00}";
-            }
-            else if(timeManager._timersnumber <= _endTimer)
-            {
-                _p1Score.text = $"Å~ ??";
-            }
             OrderCommand();
         }
     }
 
     private void Update()
     {
+        if (TimeManager.CountDownTime > _endTimer)
+        {
+            _p1Score.text = $"Å~{_p1Count:00}";
+        }
+        else if (TimeManager.CountDownTime <= _endTimer)
+        {
+            _p1Score.text = $"Å~??";
+        }
         CheckCommand();
     }
     private void OrderCommand()
