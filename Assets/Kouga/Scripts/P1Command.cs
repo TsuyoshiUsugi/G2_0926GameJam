@@ -19,6 +19,7 @@ public class P1Command : MonoBehaviour
     //ゲームオブジェクト用変数
     [SerializeField] Cooking _cooking;
     [SerializeField] public int _p1Count;
+    [SerializeField] public int _endTimer;
     List<KeyCode> _p1CommandList = new();
     KeyCode[] _p1Command = new[] {KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Q, KeyCode.E};
     private void Start()
@@ -38,18 +39,18 @@ public class P1Command : MonoBehaviour
                 MusicManager.Instance.PlaySE(MusicManager.SEType.CommnadTap);
                 if (_p1CommandList.Count == 3)
                 {
-                    _command1Back.SetActive(true);
+                    _command1Dark.SetActive(true);
                     _cooking.Bowl();
                     MusicManager.Instance.PlaySE(MusicManager.SEType.PutCup);
                 }
                 else if (_p1CommandList.Count == 2)
                 {
-                    _command2Back.SetActive(true);
+                    _command2Dark.SetActive(true);
                     _cooking.Rice();
                 }
                 else if (_p1CommandList.Count == 1)
                 {
-                    _command3Back.SetActive(true);
+                    _command3Dark.SetActive(true);
                     _cooking.Guzai();
                 }
                 _p1CommandList.RemoveAt(0);
@@ -67,11 +68,11 @@ public class P1Command : MonoBehaviour
         if (_p1CommandList.Count <= 0)
         {
             _p1Count += 1;
-            if (timeManager._timersnumber > 10)
+            if (timeManager._timersnumber > _endTimer)
             {
                 _p1Score.text = $"×{_p1Count:00}";
             }
-            else if(timeManager._timersnumber <= 10)
+            else if(timeManager._timersnumber <= _endTimer)
             {
                 _p1Score.text = $"× ??";
             }
@@ -94,8 +95,8 @@ public class P1Command : MonoBehaviour
         _p1CommandList.Add(_p1Command1);
         _p1CommandList.Add(_p1Command2);
         _p1CommandList.Add(_p1Command3);
-        _command1Back.SetActive(false);
-        _command2Back.SetActive(false);
-        _command3Back.SetActive(false);
+        _command1Dark.SetActive(false);
+        _command2Dark.SetActive(false);
+        _command3Dark.SetActive(false);
     }
 }
