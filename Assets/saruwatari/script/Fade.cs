@@ -96,6 +96,6 @@ public class Fade : MonoBehaviour
             new_color.a = alpha / 255.0f;
             fade.color = new_color;
         }
-        SceneManager.LoadScene(scenNumber);
+        SceneManager.LoadScene(sceneNumber);
     }
 }
