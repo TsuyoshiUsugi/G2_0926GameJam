@@ -62,16 +62,10 @@ public class ResultVIew : MonoBehaviour
         //各プレイヤーのドンブリの表示
         SetScore();
 
-        if (_p1Createfoods.Count < _p2Createfoods.Count)
-        {
-            ShowFoodAsync(Player.Player1, _p1Createfoods).Forget();
-            await ShowFoodAsync(Player.Player2, _p2Createfoods);
-        }
-        else
-        {
-            await ShowFoodAsync(Player.Player1, _p1Createfoods);
-            ShowFoodAsync(Player.Player2, _p2Createfoods).Forget();
-        }
+
+        await ShowFoodAsync(Player.Player1, _p1Createfoods);
+        await ShowFoodAsync(Player.Player2, _p2Createfoods);
+
         await UniTask.Delay(System.TimeSpan.FromSeconds(1));
         await ShowResult();
         _restartButton.gameObject.SetActive(true);
@@ -91,6 +85,8 @@ public class ResultVIew : MonoBehaviour
 
     private async UniTask ShowFoodAsync(Player player, List<Image> foods)
     {
+        _lineNum = 0;
+        
         for (int i = 0; i < foods.Count; i++)
         {
             if (i != 0 && i % _foodLineLimit == 0)
@@ -110,7 +106,7 @@ public class ResultVIew : MonoBehaviour
             {
                 obj.rectTransform.anchoredPosition = new Vector2(_p2Offset + xPosition, _foodImageStartPos - _lineNum * _imageSize);
             }
-            await UniTask.Delay(System.TimeSpan.FromSeconds(0.25f));
+            await UniTask.Delay(System.TimeSpan.FromSeconds(0.1f));
         }
     }
 

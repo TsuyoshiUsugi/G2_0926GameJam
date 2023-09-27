@@ -8,6 +8,7 @@ public class SceneSwitch : MonoBehaviour
 {
     //public Text p1Text;
     //public Text p2Text;
+    [SerializeField] Fade _fade;
 
     public GameObject P1Image;
     public GameObject P2Image;
@@ -69,7 +70,9 @@ public class SceneSwitch : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             StartText.gameObject.SetActive(true);
             yield return new WaitForSeconds(seconds);
-            SceneManager.LoadScene(1);
+
+            _fade.StartCoroutine(nameof(_fade.Color_FadeOut), 1);
+            //SceneManager.LoadScene(1);
         }
 
         // ２つのボタンを押されてtureになったらシーンを切り替える
