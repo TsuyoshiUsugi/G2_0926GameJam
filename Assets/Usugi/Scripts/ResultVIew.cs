@@ -32,6 +32,7 @@ public class ResultVIew : MonoBehaviour
     [SerializeField] Sprite _win;
     [SerializeField] Sprite _lose;
     [SerializeField] Sprite _draw;
+    [SerializeField] Fade _fade;
     private int _lineNum = 0;
     private int _foodLineLimit = 8; //ˆês‚É‚Ç‚ê‚¾‚¯•\Ž¦‚·‚é‚Ì‚©
     private float _imageSize = 25;
@@ -46,7 +47,7 @@ public class ResultVIew : MonoBehaviour
     {
         _p1MessageText.gameObject.SetActive(false);
         _p2MessageText.gameObject.SetActive(false);
-        _restartButton.onClick.AddListener(() => SceneManager.LoadScene(0));
+        _restartButton.onClick.AddListener(() => _fade.StartCoroutine(nameof(_fade.FadeOut), 0));
         _restartButton.gameObject.SetActive(false);
     }
 
