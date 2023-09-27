@@ -1790,11 +1790,17 @@ MonoBehaviour:
   _rice: {fileID: 7133687269049342205, guid: 99bef9f899ebaa6488ed0672f1611365, type: 3}
   _guzaiList:
   - {fileID: 6161036320715259548, guid: c4dc0ff4aec0c7b45b0da64c13f32528, type: 3}
+  - {fileID: 7561826329349874845, guid: f430c62abb2bb724d86a0dab081b0265, type: 3}
+  - {fileID: 766715164817081793, guid: c19ef51fc90609f478093790f29e990f, type: 3}
+  - {fileID: 1714650975005694358, guid: 2a01e74e7ae095a4db2850a808a9d95d, type: 3}
+  - {fileID: 4735848949549944658, guid: 5315d8298d0b01d43a5c9a36aab53714, type: 3}
   _cookingList: []
   _cookkedList:
   - {fileID: 3530420408072071008, guid: e9bec9af80ffafb42ba3699729fae895, type: 3}
   - {fileID: 3393377545163380150, guid: e8eb6fb9f00ba16489eb62241d808eac, type: 3}
   - {fileID: 835721614864831710, guid: ecc7fbd51c6140d41b7db6d4afca992a, type: 3}
+  - {fileID: 2190568770752604304, guid: a636e7354fcb6674995f6f0342ae11ff, type: 3}
+  - {fileID: 2652435786556918957, guid: c31c9cca1a7ce9f4dbe9aad2ef737d70, type: 3}
   _vector: {x: 0, y: 0, z: 0}
   _bow: {fileID: 0}
 --- !u!114 &858611902
@@ -1814,11 +1820,17 @@ MonoBehaviour:
   _rice: {fileID: 7133687269049342205, guid: b53add07bd79de049b3c0fb7aacab2c0, type: 3}
   _guzaiList:
   - {fileID: 6161036320715259548, guid: 57319c1868b14d649bfec23b7aed57ef, type: 3}
+  - {fileID: 7561826329349874845, guid: 9997ba41e2fedae49a76bd31ee30acab, type: 3}
+  - {fileID: 766715164817081793, guid: 74c85928d41a6d14aaaa702ec8fafe01, type: 3}
+  - {fileID: 1714650975005694358, guid: 18ef925c1f4fca243b3c2ce09713fbe7, type: 3}
+  - {fileID: 4735848949549944658, guid: 7278561f47486c14a8b97cf3dae0e374, type: 3}
   _cookingList: []
   _cookkedList:
   - {fileID: 3530420408072071008, guid: e9bec9af80ffafb42ba3699729fae895, type: 3}
   - {fileID: 3393377545163380150, guid: e8eb6fb9f00ba16489eb62241d808eac, type: 3}
   - {fileID: 835721614864831710, guid: ecc7fbd51c6140d41b7db6d4afca992a, type: 3}
+  - {fileID: 2190568770752604304, guid: a636e7354fcb6674995f6f0342ae11ff, type: 3}
+  - {fileID: 2652435786556918957, guid: c31c9cca1a7ce9f4dbe9aad2ef737d70, type: 3}
   _vector: {x: 0, y: 0, z: 0}
   _bow: {fileID: 0}
 --- !u!1 &929853050
