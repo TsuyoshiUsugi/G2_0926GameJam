@@ -1748,10 +1748,10 @@ MonoBehaviour:
   _startCountImage: {fileID: 1872228461}
   _startSprites:
   - {fileID: 21300000, guid: e8402dfe08cbbfe4db90a75b1edf89cd, type: 3}
-  - {fileID: 21300000, guid: 6aba62780dfd4cb488a1e3163ce10f70, type: 3}
-  - {fileID: 21300000, guid: 5e533a01f3f4b1f4989ee2dee7886418, type: 3}
-  - {fileID: 21300000, guid: b37ceb0747207f445997db1b255e9bb6, type: 3}
-  - {fileID: 21300000, guid: 71b9c618cd8fe4442a18064040e1fdc2, type: 3}
+  - {fileID: 21300000, guid: 172cba75e4c755540a585614e4962c3c, type: 3}
+  - {fileID: 21300000, guid: 2ebe0919355f3cb48ad45cc98712dc47, type: 3}
+  - {fileID: 21300000, guid: f524e75f8278d2e4386a3f0877ab0648, type: 3}
+  - {fileID: 21300000, guid: a1ad02a80c4cc5844b4a15b8220511dd, type: 3}
   _resultView: {fileID: 7092258492175667892}
   _p1Command: {fileID: 858611897}
   _p2Command: {fileID: 858611898}
