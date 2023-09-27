@@ -84,6 +84,10 @@ public class SceneSwitch : MonoBehaviour
         {
             StartCoroutine(ScSw());
             //SceneManager.LoadScene("hiroto");
+            P1_30sImage.gameObject.SetActive(false);
+            P2_30sImage.gameObject.SetActive(false);
+            P1_60sImage.gameObject.SetActive(false);
+            P2_60sImage.gameObject.SetActive(false);
         }
 
         IEnumerator ScSw()
