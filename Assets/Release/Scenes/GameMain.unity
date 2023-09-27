@@ -1063,7 +1063,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 37ac42816f64b8c45bb04e058b090717, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1138,7 +1138,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 37ac42816f64b8c45bb04e058b090717, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1771,7 +1771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextCountDown: {fileID: 83916012}
-  _timersnumber: 10
+  _timersnumber: 60
   sound: {fileID: 0}
 --- !u!114 &858611901
 MonoBehaviour:
@@ -1792,9 +1792,9 @@ MonoBehaviour:
   - {fileID: 6161036320715259548, guid: c4dc0ff4aec0c7b45b0da64c13f32528, type: 3}
   _cookingList: []
   _cookkedList:
-  - {fileID: 6055879778910463546, guid: 05807ad86d494074bbb959939d991c24, type: 3}
-  - {fileID: 6055879778910463546, guid: 05807ad86d494074bbb959939d991c24, type: 3}
-  - {fileID: 6055879778910463546, guid: 05807ad86d494074bbb959939d991c24, type: 3}
+  - {fileID: 3530420408072071008, guid: e9bec9af80ffafb42ba3699729fae895, type: 3}
+  - {fileID: 3393377545163380150, guid: e8eb6fb9f00ba16489eb62241d808eac, type: 3}
+  - {fileID: 835721614864831710, guid: ecc7fbd51c6140d41b7db6d4afca992a, type: 3}
   _vector: {x: 0, y: 0, z: 0}
   _bow: {fileID: 0}
 --- !u!114 &858611902
@@ -2317,7 +2317,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 37ac42816f64b8c45bb04e058b090717, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2392,7 +2392,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 37ac42816f64b8c45bb04e058b090717, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2467,7 +2467,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 37ac42816f64b8c45bb04e058b090717, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2697,7 +2697,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: b777d31831abbee439611b8b7dd07f22, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -3333,7 +3333,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 37ac42816f64b8c45bb04e058b090717, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3529,8 +3529,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: e8714dfef1c2f0a42a683e01897e603e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3647,8 +3647,8 @@ MonoBehaviour:
   _p2Createfoods: []
   _canvas: {fileID: 5710331493688686388}
   _foodUIDiff: 30
-  _p1Offset: -255
-  _p2Offset: 85
+  _p1Offset: -285
+  _p2Offset: 55
   _p1MessageText: {fileID: 1435353640}
   _p2MessageText: {fileID: 330304808}
   _restartButton: {fileID: 2003739064}
