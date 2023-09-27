@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TsuyoshiLibrary;
 
-public class MusicManager : MonoBehaviour
+public class MusicManager : SingletonMonobehavior<MusicManager>
 {
     [SerializeField] private List<AudioClip> sound;
     [SerializeField] AudioSource audioSource;

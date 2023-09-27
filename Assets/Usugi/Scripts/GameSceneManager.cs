@@ -18,6 +18,7 @@ public class GameSceneManager : MonoBehaviour
     [SerializeField] P2Command _p2Command;
     [SerializeField] GameObject _p1CommandObj;
     [SerializeField] GameObject _p2CommandObj;
+    [SerializeField] AudioSource _bgm;
     TimeManager _timeManager;
 
     /// <summary> ステート一覧 </summary>
@@ -36,6 +37,7 @@ public class GameSceneManager : MonoBehaviour
 
     private void InitField()
     {
+        _bgm.enabled = false;
         _timeManager = GetComponent<TimeManager>();
         _timeManager.enabled = false;
         _p1Command.enabled = false;
@@ -57,12 +59,16 @@ public class GameSceneManager : MonoBehaviour
         await StartCount();
         Debug.Log("Start");
         _currentGameState.Value = GameState.Start;
+        _bgm.enabled = true;
         ActiveCommand();
         _timeManager.enabled = true;
         _currentGameState.Value = GameState.Playing;
         await UniTask.WaitUntil(() => TimeManager.CountDownTime <= 0);
         Debug.Log("End");
         _currentGameState.Value = GameState.End;
+        _bgm.enabled = false;
+        MusicManager.Instance.PlaySE(MusicManager.SEType.TimeUp);
+        await UniTask.Delay(System.TimeSpan.FromSeconds(3));
         EndSequence();
     }
 
@@ -82,11 +88,15 @@ public class GameSceneManager : MonoBehaviour
     {
         _startCountImage.gameObject.SetActive(true);
         _startCountImage.sprite = _startSprites[3];
+        MusicManager.Instance.PlaySE(MusicManager.SEType.StartCount);
         await UniTask.Delay(System.TimeSpan.FromSeconds(1));
+        MusicManager.Instance.PlaySE(MusicManager.SEType.StartCount);
         _startCountImage.sprite = _startSprites[2];
         await UniTask.Delay(System.TimeSpan.FromSeconds(1));
+        MusicManager.Instance.PlaySE(MusicManager.SEType.StartCount);
         _startCountImage.sprite = _startSprites[1];
         await UniTask.Delay(System.TimeSpan.FromSeconds(1));
+        MusicManager.Instance.PlaySE(MusicManager.SEType.StartCount);
         _startCountImage.sprite = _startSprites[0];
         await UniTask.Delay(System.TimeSpan.FromSeconds(1));
         _startCountImage.gameObject.SetActive(false);
@@ -97,6 +107,7 @@ public class GameSceneManager : MonoBehaviour
     /// </summary>
     private void EndSequence()
     {
+        MusicManager.Instance.PlaySE(MusicManager.SEType.ResultSe);
         _p1Command.enabled = false;
         _p2Command.enabled = false;
         _resultView.ResultRunAsync().Forget();
