@@ -51,6 +51,6 @@ public class Cooking : MonoBehaviour
         var obj = Instantiate(_guzaiList[x]);
         obj.transform.SetParent(_Object.transform);
         _cookingList.Add(_cookkedList[x]);
-        _Object.GetComponent<Bowl>().Move(_vector);
+        _Object.GetComponent<Bowl>().Move();
     }
 }
