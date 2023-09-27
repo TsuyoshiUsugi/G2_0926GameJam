@@ -12,7 +12,7 @@ public class Fade : MonoBehaviour
     [SerializeField, Header("フェードアウトにかかる時間")] float fadeOut_time;
     [SerializeField, Header("ループ回数(フェードアウト)")] float fadeOutloop_count;
 
-    [SerializeField, Header("移動するシーンの名前")] int scenNumber;
+    [SerializeField, Header("移動するシーンのの番号")] int sceneNumber;
 
     // Start is called before the first frame update
     void Start()
