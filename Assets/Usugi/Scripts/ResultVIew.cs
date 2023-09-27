@@ -27,6 +27,10 @@ public class ResultVIew : MonoBehaviour
     [SerializeField] Button _restartButton;
     [SerializeField] Cooking _p1cooking;
     [SerializeField] Cooking _p2cooking;
+    private int _lineNum = 0;
+    private int _foodLineLimit = 5;
+    private float _imageSize = 50;
+    private float _foodImageStartPos = 3;
 
     private void Start()
     {
@@ -52,8 +56,17 @@ public class ResultVIew : MonoBehaviour
         FieldInit();
         //各プレイヤーのドンブリの表示
         SetScore();
-        ShowFoodAsync(Player.Player1, _p1Createfoods).Forget();
-        await ShowFoodAsync(Player.Player2, _p2Createfoods);
+
+        if (_p1Createfoods.Count < _p2Createfoods.Count)
+        {
+            ShowFoodAsync(Player.Player1, _p1Createfoods).Forget();
+            await ShowFoodAsync(Player.Player2, _p2Createfoods);
+        }
+        else
+        {
+            await ShowFoodAsync(Player.Player1, _p1Createfoods);
+            ShowFoodAsync(Player.Player2, _p2Createfoods).Forget();
+        }
         await UniTask.Delay(System.TimeSpan.FromSeconds(1));
         await ShowResult();
         _restartButton.gameObject.SetActive(true);
@@ -75,19 +88,24 @@ public class ResultVIew : MonoBehaviour
     {
         for (int i = 0; i < foods.Count; i++)
         {
-            await UniTask.Delay(System.TimeSpan.FromSeconds(0.5f));
+            if (i != 0 && i % _foodLineLimit == 0)
+            {
+                _lineNum++;
+            }
+
             var obj = Instantiate(foods[i]);
             //// Imageの位置を設定
-            float xPosition = i * _foodUIDiff;
+            float xPosition = i % _foodLineLimit * _foodUIDiff;
             obj.transform.SetParent(_canvas.transform);
             if (player == Player.Player1)
             {
-                obj.rectTransform.anchoredPosition = new Vector2(_p1Offset + xPosition, 3);
+                obj.rectTransform.anchoredPosition = new Vector2(_p1Offset + xPosition, _foodImageStartPos - _lineNum * _imageSize);
             }
             else
             {
-                obj.rectTransform.anchoredPosition = new Vector2(_p2Offset + xPosition, 3);
+                obj.rectTransform.anchoredPosition = new Vector2(_p2Offset + xPosition, _foodImageStartPos - _lineNum * _imageSize);
             }
+            await UniTask.Delay(System.TimeSpan.FromSeconds(0.5f));
         }
     }
 
