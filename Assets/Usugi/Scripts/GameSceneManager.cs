@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Cysharp.Threading.Tasks;
 using UniRx;
-using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 /// <summary>
 /// ゲームシーンの管理を行う
@@ -11,7 +11,8 @@ public class GameSceneManager : MonoBehaviour
 {
     /// <summary> 現在のステートを管理する </summary>
     [SerializeField] ReactiveProperty<GameState> _currentGameState = new (GameState.Prepare);
-    [SerializeField] Text _startCountText;
+    [SerializeField] Image _startCountImage;
+    [SerializeField] List<Sprite> _startSprites;
     [SerializeField] ResultVIew _resultView;
     [SerializeField] P1Command _p1Command;
     [SerializeField] P2Command _p2Command;
@@ -41,7 +42,7 @@ public class GameSceneManager : MonoBehaviour
         _p2Command.enabled = false;
         _p1CommandObj.SetActive(false);
         _p2CommandObj.SetActive(false);
-        _startCountText.gameObject.SetActive(false);
+        _startCountImage.gameObject.SetActive(false);
     }
 
     /// <summary>
@@ -59,7 +60,7 @@ public class GameSceneManager : MonoBehaviour
         ActiveCommand();
         _timeManager.enabled = true;
         _currentGameState.Value = GameState.Playing;
-        await UniTask.WaitUntil(() => _timeManager.TimersNumber <= 0);
+        await UniTask.WaitUntil(() => TimeManager.CountDownTime <= 0);
         Debug.Log("End");
         _currentGameState.Value = GameState.End;
         EndSequence();
@@ -79,23 +80,25 @@ public class GameSceneManager : MonoBehaviour
     /// <returns></returns>
     private async UniTask StartCount()
     {
-        _startCountText.gameObject.SetActive(true);
-        _startCountText.text = "3";
+        _startCountImage.gameObject.SetActive(true);
+        _startCountImage.sprite = _startSprites[3];
         await UniTask.Delay(System.TimeSpan.FromSeconds(1));
-        _startCountText.text = "2";
+        _startCountImage.sprite = _startSprites[2];
         await UniTask.Delay(System.TimeSpan.FromSeconds(1));
-        _startCountText.text = "1";
+        _startCountImage.sprite = _startSprites[1];
         await UniTask.Delay(System.TimeSpan.FromSeconds(1));
-        _startCountText.text = "Start";
+        _startCountImage.sprite = _startSprites[0];
         await UniTask.Delay(System.TimeSpan.FromSeconds(1));
-        _startCountText.gameObject.SetActive(false);
+        _startCountImage.gameObject.SetActive(false);
     }
 
     /// <summary>
     /// 終了時の処理を行う
     /// </summary>
     private void EndSequence()
-    { 
+    {
+        _p1Command.enabled = false;
+        _p2Command.enabled = false;
         _resultView.ResultRunAsync().Forget();
     }
 }

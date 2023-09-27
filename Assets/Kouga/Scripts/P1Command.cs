@@ -51,7 +51,7 @@ public class P1Command : MonoBehaviour
         if (_p1CommandList.Count <= 0)
         {
             _p1Count += 1;
-            _p1Score.text = _p1Count.ToString();
+            _p1Score.text = $"~{_p1Count:00}";
             OrderCommand();
         }
     }

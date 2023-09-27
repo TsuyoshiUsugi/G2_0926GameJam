@@ -53,7 +53,7 @@ public class P2Command : MonoBehaviour
         if (_p2CommandList.Count <= 0)
         {
             _p2Count += 1;
-            _p2Score.text = _p2Count.ToString();
+            _p2Score.text = $"~{_p2Count:00}";
             OrderCommand();
         }
     }
