@@ -19,7 +19,7 @@ public class Fade : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FadeOut(0);
+        FadeIn();
     }
 
     // Update is called once per frame
