@@ -17,7 +17,7 @@ public class Fade : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("Color_FadeIn");
+       
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class Fade : MonoBehaviour
         
     }
 
-    IEnumerator Color_FadeIn()
+    public IEnumerator Color_FadeIn()
     {
         // 画面をフェードインさせるコールチン
         // 前提：画面を覆うPanelにアタッチしている
@@ -62,7 +62,7 @@ public class Fade : MonoBehaviour
         }
     }
 
-    IEnumerator Color_FadeOut()
+    public IEnumerator Color_FadeOut()
     {
         // 画面をフェードインさせるコールチン
         // 前提：画面を覆うPanelにアタッチしている
