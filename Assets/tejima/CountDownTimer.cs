@@ -7,7 +7,7 @@ public class TimeManager : MonoBehaviour
 {
     public static float CountDownTime;    // カウントダウンタイム
     public Text TextCountDown;              // 表示用テキストUI
-    [SerializeField] float _timersnumber = 50;
+    [SerializeField] public float _timersnumber = 50;
     public float TimersNumber => _timersnumber;
     public AudioClip sound;
     AudioSource audioSource;
