@@ -33,9 +33,9 @@ public class ResultVIew : MonoBehaviour
     [SerializeField] Sprite _lose;
     [SerializeField] Sprite _draw;
     private int _lineNum = 0;
-    private int _foodLineLimit = 5;
-    private float _imageSize = 50;
-    private float _foodImageStartPos = 3;
+    private int _foodLineLimit = 8; //àÍçsÇ…Ç«ÇÍÇæÇØï\é¶Ç∑ÇÈÇÃÇ©
+    private float _imageSize = 25;
+    private float _foodImageStartPos = 54;
 
     private void Start()
     {
@@ -110,7 +110,7 @@ public class ResultVIew : MonoBehaviour
             {
                 obj.rectTransform.anchoredPosition = new Vector2(_p2Offset + xPosition, _foodImageStartPos - _lineNum * _imageSize);
             }
-            await UniTask.Delay(System.TimeSpan.FromSeconds(0.5f));
+            await UniTask.Delay(System.TimeSpan.FromSeconds(0.25f));
         }
     }
 
