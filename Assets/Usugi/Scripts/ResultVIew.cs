@@ -85,6 +85,8 @@ public class ResultVIew : MonoBehaviour
 
     private async UniTask ShowFoodAsync(Player player, List<Image> foods)
     {
+        _lineNum = 0;
+        
         for (int i = 0; i < foods.Count; i++)
         {
             if (i != 0 && i % _foodLineLimit == 0)
