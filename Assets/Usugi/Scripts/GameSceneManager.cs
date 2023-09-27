@@ -56,6 +56,7 @@ public class GameSceneManager : MonoBehaviour
     {
         Debug.Log("Prepare");
         _currentGameState.Value = GameState.Prepare;
+        await UniTask.Delay(System.TimeSpan.FromSeconds(2));
         await StartCount();
         Debug.Log("Start");
         _currentGameState.Value = GameState.Start;
