@@ -1747,7 +1747,7 @@ MonoBehaviour:
     value: 0
   _startCountImage: {fileID: 1872228461}
   _startSprites:
-  - {fileID: 21300000, guid: e8402dfe08cbbfe4db90a75b1edf89cd, type: 3}
+  - {fileID: 21300000, guid: 59b28b68ecaf548428d0bd403cd04454, type: 3}
   - {fileID: 21300000, guid: 172cba75e4c755540a585614e4962c3c, type: 3}
   - {fileID: 21300000, guid: 2ebe0919355f3cb48ad45cc98712dc47, type: 3}
   - {fileID: 21300000, guid: f524e75f8278d2e4386a3f0877ab0648, type: 3}
@@ -3153,7 +3153,7 @@ RectTransform:
   m_GameObject: {fileID: 1872228459}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8132, y: 1.609215, z: 1.8132}
+  m_LocalScale: {x: 5, y: 6, z: 1.8132}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1768894115}
