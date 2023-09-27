@@ -1399,6 +1399,7 @@ MonoBehaviour:
   _p2Command: {fileID: 858611898}
   _p1CommandObj: {fileID: 167112699}
   _p2CommandObj: {fileID: 137370029}
+  _bgm: {fileID: 969774199}
 --- !u!114 &858611900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1706,6 +1707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99f0b4f675ad544e8cddbb1aec19d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dontDestroy: 0
   sound:
   - {fileID: 8300000, guid: 4619b7ec86164f140b90dae6912c9956, type: 3}
   - {fileID: 8300000, guid: ed0026234e5df694082fdb75eb6e8404, type: 3}
@@ -3140,7 +3142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e96e09e624376674ea93c51cc5214bfb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a750e761b54e19f44aaea37e8acfe069, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
