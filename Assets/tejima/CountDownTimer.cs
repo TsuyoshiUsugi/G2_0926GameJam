@@ -37,6 +37,6 @@ public class TimeManager : MonoBehaviour
     }
     void RepeatMsg()
     {
-        audioSource.PlayOneShot(sound);
+        //audioSource.PlayOneShot(sound);
     }
 }

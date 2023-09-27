@@ -21,12 +21,16 @@ public class ResultVIew : MonoBehaviour
     [SerializeField] float _p1Offset = -255;
     [SerializeField] float _p2Offset = 85;
     //各プレイヤーの結果を表示
-    [SerializeField] Text _p1MessageText;
-    [SerializeField] Text _p2MessageText;
+    [SerializeField] Image _p1MessageText;
+    [SerializeField] Image _p2MessageText;
     //リスタートボタン
     [SerializeField] Button _restartButton;
     [SerializeField] Cooking _p1cooking;
     [SerializeField] Cooking _p2cooking;
+    //勝ち負けのsprite
+    [SerializeField] Sprite _win;
+    [SerializeField] Sprite _lose;
+    [SerializeField] Sprite _draw;
     private int _lineNum = 0;
     private int _foodLineLimit = 5;
     private float _imageSize = 50;
@@ -116,18 +120,18 @@ public class ResultVIew : MonoBehaviour
         _p2MessageText.gameObject.SetActive(true);
         if (_p1Createfoods.Count < _p2Createfoods.Count)    //ｐ２の勝ち
         {
-            _p1MessageText.text = "Lose";
-            _p2MessageText.text = "Win";
+            _p1MessageText.sprite = _lose;
+            _p2MessageText.sprite = _win;
         }
         else if (_p1Createfoods.Count == _p2Createfoods.Count)  //引き分け
         {
-            _p1MessageText.text = "Draw";
-            _p2MessageText.text = "Draw";
+            _p1MessageText.sprite = _draw;
+            _p2MessageText.sprite = _draw;
         }
         else    //ｐ１の勝ち
         {
-            _p1MessageText.text = "Win";
-            _p2MessageText.text = "Lose";
+            _p1MessageText.sprite = _win;
+            _p2MessageText.sprite = _lose;
         }
     }
 }

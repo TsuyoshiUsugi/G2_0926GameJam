@@ -34,6 +34,10 @@ public class MusicManager : SingletonMonobehavior<MusicManager>
                 audioClip = sound[4];
                 audioSource.PlayOneShot(audioClip);
                 break;
+            case SEType.Miss:
+                audioClip = sound[5];
+                audioSource.PlayOneShot(audioClip);
+                break;
         }
     }
 
