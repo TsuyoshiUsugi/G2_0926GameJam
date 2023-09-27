@@ -69,20 +69,20 @@ public class P2Command : MonoBehaviour
         if (_p2CommandList.Count <= 0)
         {
             _p2Count += 1;
-            if (timeManager._timersnumber > _endTimer)
-            {
-                _p2Score.text = $"Å~{_p2Count:00}";
-            }
-            else if (timeManager._timersnumber <= _endTimer)
-            {
-                _p2Score.text = $"Å~ ??";
-            }
             OrderCommand();
         }
     }
 
     private void Update()
     {
+        if (TimeManager.CountDownTime > _endTimer)
+        {
+            _p2Score.text = $"Å~{_p2Count:00}";
+        }
+        else if (TimeManager.CountDownTime <= _endTimer)
+        {
+            _p2Score.text = $"Å~??";
+        }
         CheckCommand();
     }
     private void OrderCommand()
