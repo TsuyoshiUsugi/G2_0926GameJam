@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 
 /// <summary>
 /// ”»’è‚ğó‚¯æ‚Á‚ÄAŸ‚Á‚½•û‚ÉWIN,Lose•\¦‚·‚é
@@ -118,6 +119,8 @@ public class ResultVIew : MonoBehaviour
         _canvas.SetActive(true);
         _p1MessageText.gameObject.SetActive(true);
         _p2MessageText.gameObject.SetActive(true);
+        _p1MessageText.transform.DOShakePosition(0.5f, 10f, 30, 1, false, true);
+        _p2MessageText.transform.DOShakePosition(0.5f, 10f, 30, 1, false, true);
         if (_p1Createfoods.Count < _p2Createfoods.Count)    //‚‚Q‚ÌŸ‚¿
         {
             _p1MessageText.sprite = _lose;
