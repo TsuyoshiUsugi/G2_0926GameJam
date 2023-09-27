@@ -19,6 +19,7 @@ public class P2Command : MonoBehaviour
     //ゲームオブジェクト用変数
     [SerializeField] Cooking _cooking;
     [SerializeField] public int _p2Count;
+    [SerializeField] public int _endTimer;
     List<KeyCode> _p2CommandList = new();
     KeyCode[] _p2Command = new[] { KeyCode.I, KeyCode.J, KeyCode.K, KeyCode.L, KeyCode.U, KeyCode.O};
     private void Start()
@@ -68,11 +69,11 @@ public class P2Command : MonoBehaviour
         if (_p2CommandList.Count <= 0)
         {
             _p2Count += 1;
-            if (timeManager._timersnumber > 10)
+            if (timeManager._timersnumber > _endTimer)
             {
                 _p2Score.text = $"×{_p2Count:00}";
             }
-            else if (timeManager._timersnumber <= 10)
+            else if (timeManager._timersnumber <= _endTimer)
             {
                 _p2Score.text = $"× ??";
             }
