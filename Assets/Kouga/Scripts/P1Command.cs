@@ -9,9 +9,10 @@ public class P1Command : MonoBehaviour
     [SerializeField] public Text _p1Command1Text;
     [SerializeField] public Text _p1Command2Text;
     [SerializeField] public Text _p1Command3Text;
-    [SerializeField] public GameObject _command1Back;
-    [SerializeField] public GameObject _command2Back;
-    [SerializeField] public GameObject _command3Back;
+    [SerializeField] public GameObject _command1Dark;
+    [SerializeField] public GameObject _command2Dark;
+    [SerializeField] public GameObject _command3Dark;
+    [SerializeField] TimeManager timeManager;
     //[SerializeField] public GameObject _dish = default;
     //[SerializeField] public GameObject _rice = default;
     //[SerializeField] public GameObject _ingredients = default;
@@ -66,7 +67,14 @@ public class P1Command : MonoBehaviour
         if (_p1CommandList.Count <= 0)
         {
             _p1Count += 1;
-            _p1Score.text = $"Å~{_p1Count:00}";
+            if (timeManager._timersnumber > 10)
+            {
+                _p1Score.text = $"Å~{_p1Count:00}";
+            }
+            else if(timeManager._timersnumber <= 10)
+            {
+                _p1Score.text = $"Å~ ??";
+            }
             OrderCommand();
         }
     }
