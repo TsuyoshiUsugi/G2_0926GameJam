@@ -71,7 +71,7 @@ public class SceneSwitch : MonoBehaviour
             StartText.gameObject.SetActive(true);
             yield return new WaitForSeconds(seconds);
 
-            _fade.StartCoroutine(nameof(_fade.Color_FadeOut), 1);
+            _fade.StartCoroutine(nameof(_fade.FadeOut), 1);
             //SceneManager.LoadScene(1);
         }
 
