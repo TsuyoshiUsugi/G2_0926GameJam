@@ -25,6 +25,8 @@ public class ResultVIew : MonoBehaviour
     [SerializeField] Text _p2MessageText;
     //リスタートボタン
     [SerializeField] Button _restartButton;
+    [SerializeField] Cooking _p1cooking;
+    [SerializeField] Cooking _p2cooking;
 
     private void Start()
     {
@@ -49,21 +51,18 @@ public class ResultVIew : MonoBehaviour
         _canvas.SetActive(true);
         FieldInit();
         //各プレイヤーのドンブリの表示
+        SetScore();
         ShowFoodAsync(Player.Player1, _p1Createfoods).Forget();
         await ShowFoodAsync(Player.Player2, _p2Createfoods);
         await UniTask.Delay(System.TimeSpan.FromSeconds(1));
         await ShowResult();
         _restartButton.gameObject.SetActive(true);
-        //Debug.Log("Prepare");
-        //_currentGameState.Value = GameState.Prepare;
-        //await StartCount();
-        //Debug.Log("Start");
-        //_currentGameState.Value = GameState.Start;
-        //Debug.Log("Playing");
-        //_currentGameState.Value = GameState.Playing;
-        //Debug.Log("End");
-        //_currentGameState.Value = GameState.End;
-        //EndSequence();
+    }
+
+    private void SetScore()
+    {
+        _p1Createfoods = _p1cooking._cookingList;
+        _p2Createfoods = _p2cooking._cookingList;
     }
 
     private enum Player
@@ -94,6 +93,7 @@ public class ResultVIew : MonoBehaviour
 
     private async UniTask ShowResult()
     {
+        _canvas.SetActive(true);
         _p1MessageText.gameObject.SetActive(true);
         _p2MessageText.gameObject.SetActive(true);
         if (_p1Createfoods.Count < _p2Createfoods.Count)    //ｐ２の勝ち

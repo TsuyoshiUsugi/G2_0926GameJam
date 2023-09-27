@@ -40,14 +40,14 @@ public class Cooking : MonoBehaviour
 
     public void Rice()
     {
-       var obj = Instantiate(_rice, _Object.transform);
+       var obj = Instantiate(_rice);
         obj.transform.SetParent(_Object.transform);
     }
 
     public void Guzai()
     {
         int x = Random.Range(0, _guzaiList.Count);
-        var obj = Instantiate(_guzaiList[x], _Object.transform);
+        var obj = Instantiate(_guzaiList[x]);
         obj.transform.SetParent(_Object.transform);
         _cookingList.Add(_cookkedList[x]);
         _Object.GetComponent<Bowl>().Move();

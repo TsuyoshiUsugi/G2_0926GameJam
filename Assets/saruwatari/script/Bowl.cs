@@ -11,7 +11,7 @@ public class Bowl : MonoBehaviour
     
     public void Move()
     {
-        this.transform.DOMove(new Vector3(0f, X, 0f), 3f);
+        this.transform.DOMove(new Vector3(X, 0f, 0f), 3f);
         Destroy(this.gameObject,3f);
     }
 }
