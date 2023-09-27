@@ -38,18 +38,18 @@ public class P1Command : MonoBehaviour
                 MusicManager.Instance.PlaySE(MusicManager.SEType.CommnadTap);
                 if (_p1CommandList.Count == 3)
                 {
-                    _command1Back.SetActive(true);
+                    _command1Dark.SetActive(true);
                     _cooking.Bowl();
                     MusicManager.Instance.PlaySE(MusicManager.SEType.PutCup);
                 }
                 else if (_p1CommandList.Count == 2)
                 {
-                    _command2Back.SetActive(true);
+                    _command2Dark.SetActive(true);
                     _cooking.Rice();
                 }
                 else if (_p1CommandList.Count == 1)
                 {
-                    _command3Back.SetActive(true);
+                    _command3Dark.SetActive(true);
                     _cooking.Guzai();
                 }
                 _p1CommandList.RemoveAt(0);
@@ -94,8 +94,8 @@ public class P1Command : MonoBehaviour
         _p1CommandList.Add(_p1Command1);
         _p1CommandList.Add(_p1Command2);
         _p1CommandList.Add(_p1Command3);
-        _command1Back.SetActive(false);
-        _command2Back.SetActive(false);
-        _command3Back.SetActive(false);
+        _command1Dark.SetActive(false);
+        _command2Dark.SetActive(false);
+        _command3Dark.SetActive(false);
     }
 }

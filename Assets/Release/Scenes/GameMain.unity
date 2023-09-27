@@ -1585,9 +1585,9 @@ MonoBehaviour:
   _p1Command1Text: {fileID: 613881776}
   _p1Command2Text: {fileID: 1636232635}
   _p1Command3Text: {fileID: 116432332}
-  _command1Back: {fileID: 5025929}
-  _command2Back: {fileID: 1974209212}
-  _command3Back: {fileID: 1932417419}
+  _command1Dark: {fileID: 5025929}
+  _command2Dark: {fileID: 1974209212}
+  _command3Dark: {fileID: 1932417419}
   timeManager: {fileID: 858611900}
   _cooking: {fileID: 858611902}
   _p1Count: 0
@@ -1607,9 +1607,9 @@ MonoBehaviour:
   _p2Command1Text: {fileID: 1465356060}
   _p2Command2Text: {fileID: 169485511}
   _p2Command3Text: {fileID: 1832059}
-  _command1Back: {fileID: 929853050}
-  _command2Back: {fileID: 811121073}
-  _command3Back: {fileID: 1712062731}
+  _command1Dark: {fileID: 929853050}
+  _command2Dark: {fileID: 811121073}
+  _command3Dark: {fileID: 1712062731}
   timeManager: {fileID: 858611900}
   _cooking: {fileID: 858611901}
   _p2Count: 0
@@ -1674,9 +1674,9 @@ MonoBehaviour:
   - {fileID: 6161036320715259548, guid: c4dc0ff4aec0c7b45b0da64c13f32528, type: 3}
   _cookingList: []
   _cookkedList:
-  - {fileID: 6055879778910463546, guid: 05807ad86d494074bbb959939d991c24, type: 3}
-  - {fileID: 6055879778910463546, guid: 05807ad86d494074bbb959939d991c24, type: 3}
-  - {fileID: 6055879778910463546, guid: 05807ad86d494074bbb959939d991c24, type: 3}
+  - {fileID: 3530420408072071008, guid: e9bec9af80ffafb42ba3699729fae895, type: 3}
+  - {fileID: 3393377545163380150, guid: e8eb6fb9f00ba16489eb62241d808eac, type: 3}
+  - {fileID: 835721614864831710, guid: ecc7fbd51c6140d41b7db6d4afca992a, type: 3}
   _vector: {x: 0, y: 0, z: 0}
   _bow: {fileID: 0}
 --- !u!114 &858611902
@@ -3529,8 +3529,8 @@ MonoBehaviour:
   _p2Createfoods: []
   _canvas: {fileID: 5710331493688686388}
   _foodUIDiff: 30
-  _p1Offset: -255
-  _p2Offset: 85
+  _p1Offset: -235
+  _p2Offset: 105
   _p1MessageText: {fileID: 1435353640}
   _p2MessageText: {fileID: 330304808}
   _restartButton: {fileID: 2003739064}
