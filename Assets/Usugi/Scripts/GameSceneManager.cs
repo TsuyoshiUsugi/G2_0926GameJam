@@ -68,8 +68,18 @@ public class GameSceneManager : MonoBehaviour
         _currentGameState.Value = GameState.End;
         _bgm.enabled = false;
         MusicManager.Instance.PlaySE(MusicManager.SEType.TimeUp);
-        await UniTask.Delay(System.TimeSpan.FromSeconds(3));
+        await DoBeforeEnd();
         EndSequence();
+    }
+
+    private async UniTask DoBeforeEnd()
+    {
+        _p1Command.enabled = false;
+        _p2Command.enabled = false;
+        _startCountImage.gameObject.SetActive(true);
+        _startCountImage.sprite = _startSprites[4];
+        await UniTask.Delay(System.TimeSpan.FromSeconds(3));
+        _startCountImage.gameObject.SetActive(false);
     }
 
     private void ActiveCommand()
@@ -108,8 +118,7 @@ public class GameSceneManager : MonoBehaviour
     private void EndSequence()
     {
         MusicManager.Instance.PlaySE(MusicManager.SEType.ResultSe);
-        _p1Command.enabled = false;
-        _p2Command.enabled = false;
+
         _resultView.ResultRunAsync().Forget();
     }
 }
