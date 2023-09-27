@@ -21,7 +21,7 @@ public class P1Command : MonoBehaviour
     [SerializeField] public int _p1Count;
     [SerializeField] public int _endTimer;
     List<KeyCode> _p1CommandList = new();
-    KeyCode[] _p1Command = new[] {KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Q, KeyCode.E};
+    KeyCode[] _p1Command = new[] {KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Z, KeyCode.X, KeyCode.C};
     private void Start()
     {
         OrderCommand();
