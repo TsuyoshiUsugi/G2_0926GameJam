@@ -972,7 +972,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 994885816931ec049bd0c1816945ab71, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1439,7 +1439,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 994885816931ec049bd0c1816945ab71, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1585,9 +1585,9 @@ MonoBehaviour:
   _p1Command1Text: {fileID: 613881776}
   _p1Command2Text: {fileID: 1636232635}
   _p1Command3Text: {fileID: 116432332}
-  _command1Dark: {fileID: 0}
-  _command2Dark: {fileID: 0}
-  _command3Dark: {fileID: 0}
+  _command1Dark: {fileID: 5025929}
+  _command2Dark: {fileID: 1974209212}
+  _command3Dark: {fileID: 1932417419}
   timeManager: {fileID: 858611900}
   _cooking: {fileID: 858611902}
   _p1Count: 0
@@ -1608,9 +1608,9 @@ MonoBehaviour:
   _p2Command1Text: {fileID: 1465356060}
   _p2Command2Text: {fileID: 169485511}
   _p2Command3Text: {fileID: 1832059}
-  _command1Dark: {fileID: 0}
-  _command2Dark: {fileID: 0}
-  _command3Dark: {fileID: 0}
+  _command1Dark: {fileID: 929853050}
+  _command2Dark: {fileID: 811121073}
+  _command3Dark: {fileID: 1712062731}
   timeManager: {fileID: 858611900}
   _cooking: {fileID: 858611901}
   _p2Count: 0
