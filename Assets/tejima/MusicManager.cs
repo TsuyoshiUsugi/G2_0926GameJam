@@ -44,5 +44,6 @@ public class MusicManager : SingletonMonobehavior<MusicManager>
         PutCup,
         StartCount,
         TimeUp,
+        Miss,
     }
 }
