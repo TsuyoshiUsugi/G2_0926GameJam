@@ -20,14 +20,18 @@ public class SceneSwitch : MonoBehaviour
     public AudioSource KeySE1;
     public AudioSource KeySE2;
 
+    public GameObject StartText;
+
     private void Start()
     {
         KeySE1 = GetComponent<AudioSource>();
         KeySE2 = GetComponent<AudioSource>();
+
+        
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) && !p1)
+        if (Input.GetKeyDown(KeyCode.W))// || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) && !p1)
         {
             Debug.Log("P1Å@True");
             p1 = true;
@@ -37,7 +41,7 @@ public class SceneSwitch : MonoBehaviour
 
             
         }
-        if(Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.J) && !p2)
+        if(Input.GetKeyDown(KeyCode.K)) //|| Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.J) && !p2)
         {
             Debug.Log("P2 True");
             p2 = true;
@@ -56,7 +60,8 @@ public class SceneSwitch : MonoBehaviour
 
         IEnumerator ScSw()
         {
-
+            yield return new WaitForSeconds(0.5f);
+            StartText.gameObject.SetActive(true);
             yield return new WaitForSeconds(seconds);
             SceneManager.LoadScene(1);
         }
