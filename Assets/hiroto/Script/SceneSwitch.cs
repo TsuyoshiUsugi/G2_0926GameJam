@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class SceneSwitch : MonoBehaviour
 {
-    public Text p1Text;
-    public Text p2Text;
+    //public Text p1Text;
+    //public Text p2Text;
 
     public GameObject P1Image;
     public GameObject P2Image;
@@ -22,6 +22,9 @@ public class SceneSwitch : MonoBehaviour
 
     public GameObject StartText;
 
+    public GameObject Ready1;
+    public GameObject Ready2;
+
     private void Start()
     {
         KeySE1 = GetComponent<AudioSource>();
@@ -31,25 +34,28 @@ public class SceneSwitch : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))// || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) && !p1)
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) && !p1)
         {
             Debug.Log("P1Å@True");
             p1 = true;
-            p1Text.text = "Ready";
+            //p1Text.text = "Ready";
             KeySE1.Play();
-            P1Image.gameObject.GetComponent<Image>().color = new Color(0.8f, 0.3f, 0.1f, 0.5f);
+            P1Image.gameObject.SetActive(false);
+            Ready1.gameObject.SetActive(true);
 
-            
         }
-        if(Input.GetKeyDown(KeyCode.K)) //|| Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.J) && !p2)
+        if(Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.L) && !p2)
         {
             Debug.Log("P2 True");
             p2 = true;
-            p2Text.text = "Ready";
+            //p2Text.text = "Ready";
             KeySE2.Play();
-            P2Image.gameObject.GetComponent<Image>().color = new Color(0.8f, 0.3f, 0.1f, 0.5f);
-            
+            P2Image.gameObject.SetActive(false);
+            Ready2.gameObject.SetActive(true);
+
+
         }
+        
         if(p1 == true && p2 == true  )
         {
             StartCoroutine(ScSw());
