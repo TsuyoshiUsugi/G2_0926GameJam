@@ -1924,7 +1924,6 @@ MonoBehaviour:
   - {fileID: 835721614864831710, guid: ecc7fbd51c6140d41b7db6d4afca992a, type: 3}
   - {fileID: 2190568770752604304, guid: a636e7354fcb6674995f6f0342ae11ff, type: 3}
   - {fileID: 2652435786556918957, guid: c31c9cca1a7ce9f4dbe9aad2ef737d70, type: 3}
-  - {fileID: 6396969303366451951, guid: d1e6589f4636557408ae4caec3a2ff5b, type: 3}
   - {fileID: 3666456506028427310, guid: ecbbb40981d49e4499fb2789060f2315, type: 3}
   _vector: {x: 0, y: 0, z: 0}
   _bow: {fileID: 0}
@@ -1958,7 +1957,6 @@ MonoBehaviour:
   - {fileID: 835721614864831710, guid: ecc7fbd51c6140d41b7db6d4afca992a, type: 3}
   - {fileID: 2190568770752604304, guid: a636e7354fcb6674995f6f0342ae11ff, type: 3}
   - {fileID: 2652435786556918957, guid: c31c9cca1a7ce9f4dbe9aad2ef737d70, type: 3}
-  - {fileID: 6396969303366451951, guid: d1e6589f4636557408ae4caec3a2ff5b, type: 3}
   - {fileID: 3666456506028427310, guid: ecbbb40981d49e4499fb2789060f2315, type: 3}
   _vector: {x: 0, y: 0, z: 0}
   _bow: {fileID: 0}

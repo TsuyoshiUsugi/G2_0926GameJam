@@ -339,7 +339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8755448990304703914, guid: accbc29f11874d74286325b46c132c9e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1008,7 +1008,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Tab : \u64CD\u4F5C\u8AAC\u660E"
+  m_Text: 'Tab : Help'
 --- !u!222 &881782539
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1034,7 +1034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &929556187
 MonoBehaviour:
   m_ObjectHideFlags: 0
